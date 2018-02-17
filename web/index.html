@@ -1,8 +1,33 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8"/>
 	<title>
 		Wealth Calculator - welcome
 	</title>
-	<body>
+	<script type="text/javascript">
+		function calculateWealth(userdata){ 
+			var survivalDays = (userdata.assets.value * 30) / userdata.expense.value;
+			document.getElementById('resultText').innerHTML="You are wealthy enough to survive " + survivalDays + " days";
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<div>
 		Calculate how many days can you survive if you lose you job today
-	</body>
+	</div>
+	<p/>
+	<form id="userdata" onsubmit="return calculateWealth(this)" action="">
+		Your total assets (Savings, investments, etc) Rs: <input type="number" name="assets" id="assets">
+		<br/>
+		Your monthly expenses including dependent's Rs: <input type="number" name="expense" id="expense">
+		<br/>
+		<input type="submit" value="Calculate">
+	</form>	
+	<br/>	
+	<div id="result">
+		<label id="resultText"></label>
+	</div>
+</body>
 </html>
