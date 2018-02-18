@@ -1,33 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
-	<title>
-		Wealth Calculator - welcome
-	</title>
-	<script type="text/javascript">
-		function calculateWealth(userdata){ 
-			var survivalDays = (userdata.assets.value * 30) / userdata.expense.value;
-			document.getElementById('resultText').innerHTML="You are wealthy enough to survive " + survivalDays + " days";
-			return false;
-		}
-	</script>
-</head>
-<body>
-	<div>
-		Calculate how many days can you survive if you lose you job today
-	</div>
-	<p/>
-	<form id="userdata" onsubmit="return calculateWealth(this)" action="">
-		Your total assets (Savings, investments, etc) Rs: <input type="number" name="assets" id="assets">
-		<br/>
-		Your monthly expenses including dependent's Rs: <input type="number" name="expense" id="expense">
-		<br/>
-		<input type="submit" value="Calculate">
-	</form>	
-	<br/>	
-	<div id="result">
-		<label id="resultText"></label>
-	</div>
-</body>
-</html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> </head>
+
+	<body>
+		<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#">Wealthify Me</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+				<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">wealth calculator</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">wealth basics</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="py-1">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="col-md-12">
+						<h2 class="text-primary">Wealth Calculator - How many days can you survive if you lose your job today?</h2>
+						<p class="">Definition of wealth in terms of time is A person’s ability to survive X number of days forward</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="py-1" style="background-position:left top;background-size:fit;background-repeat:no-repeat;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="book">
+						<div class="card">
+							<div class="card-body py-1">
+								<form id="userdata" onsubmit="return calculateWealth(this)" action="">
+									<div class="form-group"> <label>Your total assets</label>
+										<input id="assets" class="form-control" placeholder="Savings, investments, cash in hand etc"/> </div>
+										<div class="form-group"> <label>Your monthly expense</label>
+											<input id="assets" class="form-control" placeholder="recurring expenses rent, food, medical etc" > </div>
+											<div class="form-group">
+												<button id="expenses" type="submit" class="btn mt-2 btn-outline-dark" id="expense"/>Calculate</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="py-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<p id="" class="m-2">
+									<label id="resultText">Submit to see results</label>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+				<script type="text/javascript">
+					function calculateWealth(userdata){ 
+						alert("call")
+						var survivalDays = (userdata.assets.value * 30) / userdata.expense.value;
+						document.getElementById('resultText').innerHTML="You are wealthy enough to survive " + survivalDays + " days";
+						return false;
+					}
+				</script>
+
+			</body>
+
+			</html>
